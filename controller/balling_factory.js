@@ -1,5 +1,6 @@
 module.exports = function BallingGame(){
     let score = 0;
+    let counter = 0;
     function PlayGame(rolls){
        
         let regex = '/\s/g'
@@ -10,6 +11,7 @@ module.exports = function BallingGame(){
          for(let i = 0; i < scoreFrame.length; i++){
      
              if(i === scoreFrame.length -1){
+                counter++;
                  scoreFrame = scoreFrame[i].split('');
      
                  for(let j = 0; j < scoreFrame.length; j++){
@@ -43,9 +45,15 @@ module.exports = function BallingGame(){
         return score;
      }
 
+     function GetCounter(){
+        return counter;
+
+     }
+
      return {
         PlayGame,
-        GetScore
+        GetScore,
+        GetCounter
      }
 
 }
