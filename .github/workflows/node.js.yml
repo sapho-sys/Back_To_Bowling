@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: mac-latest
+    runs-on: mac
 
     strategy:
       matrix:
