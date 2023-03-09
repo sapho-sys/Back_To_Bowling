@@ -19,11 +19,17 @@ module.exports = function BallingGame(){
                  
                  }
              } else {
-                 !isNaN(scoreFrame[i]) ? score = score + parseInt(scoreFrame[i][0]) + 
-                 parseInt(scoreFrame[i][1]): scoreFrame[i].includes('X') && !isNaN(scoreFrame[1 + i]) ? score = score + 10 +
-                 parseInt(scoreFrame[i + 1][0]) + parseInt(scoreFrame[i + 1][1]):
-                 scoreFrame[i].includes('/') && !isNaN(scoreFrame[i + 1]) ? score = score + 10 +
-                     parseInt(scoreFrame[i + 1][0]): null
+                     i === scoreFrame.length - 3 && scoreFrame[i] === 'X' && scoreFrame[i+1] === 'X' && scoreFrame[i+2][0] === 'X' || i === scoreFrame.length - 2 
+                     && scoreFrame[i] === 'X' && scoreFrame[i+1][0] === 'X' && scoreFrame[i+1][1] === 'X' ? score = score + 30
+                     : i === scoreFrame.length - 2 && scoreFrame[i] === 'X' && scoreFrame[i+1][0] === 'X' && !isNaN(scoreFrame[i+1][1]) ? score = score + 20 + parseInt(scoreFrame[i+1][1])
+                     : i === scoreFrame.length - 2 && scoreFrame[i].includes('/') && scoreFrame[i+1][0] === 'X' ? score = score + 20
+                     : !isNaN(scoreFrame[i]) ? score = score + parseInt(scoreFrame[i][0]) + parseInt(scoreFrame[i][1])
+                     : scoreFrame[i] === 'X' && !isNaN(scoreFrame[i+1]) ? score = score + 10 + parseInt(scoreFrame[i+1][0]) + parseInt(scoreFrame[i+1][1]) 
+                     : scoreFrame[i].includes('/') && !isNaN(scoreFrame[i+1]) | scoreFrame[i+1].includes('/') ? score = score + 10 + parseInt(scoreFrame[i+1][0])
+                     : scoreFrame[i] === 'X' && scoreFrame[i+1].includes('/') || scoreFrame[i].includes('/') && scoreFrame[i+1] === 'X' ? score = score + 20
+                     : scoreFrame[i] === 'X' && scoreFrame[i+1] === 'X' && scoreFrame[i+2] === 'X' ? score = score + 30
+                     : scoreFrame[i] === 'X' && scoreFrame[i+1] === 'X' && scoreFrame[i+2].includes('/') | !isNaN(scoreFrame[i+2]) ? score = score + 20 + parseInt(scoreFrame[i+2][0])
+                     : null
              }
          }
      
