@@ -9,25 +9,22 @@ describe('Balling Game', function(){
         assert.equal(0,ballingAlley.GetScore());
     });
 
-    it('The player should be able to make a successful strike & earn at least 10 points', function(){
-        ballingAlley.PlayGame('X');
+   
+    it('The player should be able to able to get 10 points if they hit a Spare', function(){
+        ballingAlley.PlayGame('/');
         assert.equal(10, ballingAlley.GetScore());
     });
 
-    it('The player should be able to able to double their point to 20 if they hit another Strike', function(){
+     it('The player should be able to increase their score to 20 points if they hit a Strike', function(){
         ballingAlley.PlayGame('X');
         assert.equal(20, ballingAlley.GetScore());
     });
-    // it('The player should be able to make two successful strikes & earn at least 40 points', function(){
-    //     ballingAlley.PlayGame('/');
-    //     assert.equal(1, ballingAlley.GetScore());
-    // })
 
+    it('The player should be able to increase their score to 86 from the previous total received on the Strike', function(){
+        ballingAlley.PlayGame('15 27 81 43 26 05 16 22 13 43');
+        assert.equal(86, ballingAlley.GetScore());
 
-
-    // it('The player should be able to see their score for that game', function(){
-
-    // })
+    })
 
     // it('The player should be able to see their scores for each roll they made & also see their Total score for their overall game',function(){
 
