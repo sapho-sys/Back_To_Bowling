@@ -18,7 +18,6 @@ describe('Balling Game', function(){
         ballingAlley.PlayGame('XX');
         assert.equal(40, ballingAlley.GetScore());
     });
-
     // it('The player should be able to make two successful strikes & earn at least 40 points', function(){
     //     ballingAlley.PlayGame('/');
     //     assert.equal(1, ballingAlley.GetScore());
