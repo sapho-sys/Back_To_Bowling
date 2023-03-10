@@ -42,6 +42,10 @@ app.get('/', function(req, res){
     res.render('index')
 });
 
+app.post('/bowl', function(req,res){
+    
+})
+
 //start the server
 const PORT = process.env.PORT || 3012;
 
