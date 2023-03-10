@@ -1,6 +1,10 @@
 module.exports = function BallingGame(){
     let score = 0;
     let counter = 0;
+
+    let bowls;
+    let points;
+    
     function PlayGame(rolls){
        
         let regex = '/\s/g'
@@ -37,12 +41,22 @@ module.exports = function BallingGame(){
      
         }
         return score;
-     
-          
      }
 
      function GetScore(){
         return score;
+     }
+     function setBoard(){
+        let count = GetCounter();
+        let pointers = GetScore();
+        bowls = count;
+        points = pointers ;
+        return {bowls, points};
+
+     }
+
+     function getBoard(){
+        return setBoard();
      }
 
      function GetCounter(){
@@ -50,10 +64,14 @@ module.exports = function BallingGame(){
 
      }
 
+     
+
      return {
         PlayGame,
         GetScore,
-        GetCounter
+        GetCounter,
+        setBoard,
+        getBoard
      }
 
 }
