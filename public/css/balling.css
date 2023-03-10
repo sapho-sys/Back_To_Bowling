@@ -54,14 +54,7 @@ table.scorecard tr:nth-child(2) td:last-child {border-bottom:1px solid;}
     top: 0;
     left: 0;
     border: 3.5px solid;
-    border-color: #1364E8;
- 
-    border-color: #1364E8;
- 
-    border-color: #1364E8;
- 
-    border-color: #1364E8;
- 
+    border-color: #1364E8; 
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#1364E8", endColorstr="#1364E8", GradientType=1);
     width: 90%;
     border-top: none;
