@@ -35,6 +35,7 @@ table.scorecard tr:nth-child(2) td:last-child {border-bottom:1px solid;}
 	height: 100px;
 	margin: 50px auto 0;
 	border-radius: 50%;
+    color:#fff;
 }
 
 .b2 {
