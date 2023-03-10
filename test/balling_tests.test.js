@@ -47,4 +47,6 @@ describe('Sapho Nkunzi Bowling Game', function(){
         console.log('Board =>', ballingAlley.getBoard());
         assert.deepEqual({bowls: 10, points: 68}, ballingAlley.getBoard())
     })
+
+   
 })
