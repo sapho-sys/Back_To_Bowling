@@ -68,6 +68,7 @@ module.exports = function BallingGame(){
         const random = Math.floor(Math.random() * randomScore.length);
         let scoredPoint = randomScore[random]
         PlayGame(scoredPoint);
+        return scoredPoint;
      }
 
      return {

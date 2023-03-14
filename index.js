@@ -39,11 +39,15 @@ app.use(session({
 app.use(flash());
 
 app.get('/', function(req, res){
-    res.render('index')
+    res.render('index', {
+        counter: ballingGame.GetCounter(),
+        score: ballingGame.GetScore(),
+        balls: ballingGame.PlaySimulator()
+    })
 });
 
 app.post('/bowl', function(req,res){
-    
+
 })
 
 //start the server
