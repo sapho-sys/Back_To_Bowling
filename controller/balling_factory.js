@@ -67,8 +67,12 @@ module.exports = function BallingGame() {
             : null;
         }
       }
+      
     }
+   
     return score;
+   
+    
   }
 
   function GetScore() {
@@ -101,7 +105,11 @@ module.exports = function BallingGame() {
     let scoredPoint = randomScore[random];
     PlayGame(scoredPoint);
     scorings.push(scoredPoint);
+    if(GetCounter() >= 23){
+        return;
+      }
     return scorings;
+    
   }
 
   return {
