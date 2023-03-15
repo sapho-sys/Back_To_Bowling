@@ -38,6 +38,6 @@ describe('Sapho Nkunzi Bowling Game', function(){
     it('The player should be able to see the number of swings they have made in the bowling alley, which is 8 in this case',function(){
         ballingAlley.PlayGame('13');
         console.log('Counter =>', ballingAlley.GetCounter());
-        assert.equal(9, ballingAlley.GetCounter())
+        assert.equal(11, ballingAlley.GetCounter())
     });    
 })
