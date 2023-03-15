@@ -50,18 +50,7 @@ module.exports = function BallingGame(){
         scoreData.push(score)
         return scoreData;
      }
-     function setBoard(){
-        let currentPoint = PlaySimulator();
-        let pointers = GetScore();
-        bowls = currentPoint;
-        points = pointers ;
-        playerAction.push({bowls, points})
-        return playerAction;
-     }
-
-     function getBoard(){
-        return setBoard();
-     }
+    
 
      function GetCounter(){
         return counter;
@@ -82,8 +71,6 @@ module.exports = function BallingGame(){
         PlayGame,
         GetScore,
         GetCounter,
-        setBoard,
-        getBoard,
         PlaySimulator
      }
 
