@@ -42,7 +42,8 @@ app.get('/', function(req, res){
     res.render('index', {
         counter: ballingGame.GetCounter(),
         score: ballingGame.GetScore(),
-        balls: ballingGame.PlaySimulator()
+        balls: ballingGame.PlaySimulator(),
+        balls2:ballingGame.PlaySimulator()
     })
 });    
 

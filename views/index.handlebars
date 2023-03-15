@@ -20,14 +20,14 @@
         </div>
       </div>
     </section>
+    <br />
+    <section class="shape-section">
+      <h4 class="title">Number of Bowls:</h4>
+      <div class="container diamond-shape">
+        <div class="item-count">{{counter}}</div><!-- .item-count -->
+      </div><!-- .container .diamond-shape-->
+    </section><!-- .shape-section -->
 
-    <div id="buttons" class="buttons">
-      <form action="/bowl" method="POST">      
-        <button type="submit" onclick="pinHit(0)" class="ball b2"><strong>Bowl
-            !!!</strong></button>
-      </form>
-
-    </div>
     <h1 class="title">Bowling Score Card</h1>
     <div id="scorecard">
       <table
@@ -36,37 +36,43 @@
         cellpadding="1"
         cellspacing="0"
       >
-    
-          <tr>
-            <th colspan="6">Frame 1</th>
-            <th colspan="6">Frame 2</th>
-            <th colspan="6">Frame 3</th>
-            <th colspan="6">Frame 4</th>
-            <th colspan="6">Frame 5</th>
-            <th colspan="6">Frame 6</th>
-            <th colspan="6">Frame 7</th>
-            <th colspan="6">Frame 8</th>
-            <th colspan="6">Frame 9</th>
-            <th colspan="6">Frame 10</th>
-          </tr>
 
-       
-
-          <tr>
-            {{#each balls}}
-            <td colspan="3"></td><td id="frame1" colspan="3">{{this}}</td>
-            {{/each}}
-          </tr>
-
-          <tr>
+        <tr>
+          <th colspan="6">Frame 1</th>
+          <th colspan="6">Frame 2</th>
+          <th colspan="6">Frame 3</th>
+          <th colspan="6">Frame 4</th>
+          <th colspan="6">Frame 5</th>
+          <th colspan="6">Frame 6</th>
+          <th colspan="6">Frame 7</th>
+          <th colspan="6">Frame 8</th>
+          <th colspan="6">Frame 9</th>
+          <th colspan="6">Frame 10</th>
+        </tr>
+        <tr>
+          {{#each balls}}
+            {{#each balls2}}
+              <td colspan="3">{{this}}</td>{{/each}}<td
+              id="frame1"
+              colspan="3"
+            >{{this}}</td>
+          {{/each}}
+        </tr>
+        <tr>
+          {{#if balls2}}
             {{#each score}}
-            <td colspan="6" id="marker0">{{this}}</td>
+              <td colspan="6" id="marker0">{{this}}</td>
             {{/each}}
-          </tr>
-
-      
-
+          {{/if}}
+        </tr>
       </table>
+    </div>
+    <div id="buttons" class="buttons">
+      <form action="/bowl" method="POST">
+        <button type="submit" onclick="pinHit(0)" class="ball b2"><strong>Bowl
+            !!!</strong></button>
+      </form>
+
     </div>
     <h1 id="comments" class="notice"></h1>
     <h1 id="gameover" class="notice"></h1>

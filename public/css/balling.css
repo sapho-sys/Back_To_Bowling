@@ -1,141 +1,195 @@
-body{
-
+body {
 }
-.title{
+.title {
   text-align: center;
 }
-.buttons{
+.buttons {
   text-align: center;
   margin: 30px;
 }
-.notice{
+.notice {
   text-align: center;
-  color: #1364E8;
+  color: #1364e8;
 }
-.final-score{
+.final-score {
   text-align: center;
   color: green;
   padding-bottom: 10px;
 }
-#playagain{
+#playagain {
   text-align: center;
 }
-table.scorecard {margin: 0 auto; width:80%; font-size:12px; border:1px solid; text-align: center; table-layout: fixed; margin-bottom: 40px;}
-table.scorecard th, tr, td {padding: 0; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; text-align: center;}
-table.scorecard th {border-bottom:1px solid; background-color:#1364E8; height:30px; color: #fff}
-table.scorecard th:not(:last-child) {border-right:1px solid;}
-table.scorecard td {height:30px; background: rgba(255, 255, 255, 0.5);}
-table.scorecard tr td:not(:last-child) {border-right:1px solid;}
-table.scorecard tr:nth-child(2) td:nth-child(even) {border-bottom:1px solid;}
-table.scorecard tr:nth-child(2) td:last-child {border-bottom:1px solid;}
+table.scorecard {
+  margin: 0 auto;
+  width: 80%;
+  font-size: 12px;
+  border: 1px solid;
+  text-align: center;
+  table-layout: fixed;
+  margin-bottom: 40px;
+}
+table.scorecard th,
+tr,
+td {
+  padding: 0;
+  vertical-align: middle;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+table.scorecard th {
+  border-bottom: 1px solid;
+  background-color: #1364e8;
+  height: 30px;
+  color: #fff;
+}
+table.scorecard th:not(:last-child) {
+  border-right: 1px solid;
+}
+table.scorecard td {
+  height: 30px;
+  background: rgba(255, 255, 255, 0.5);
+}
+table.scorecard tr td:not(:last-child) {
+  border-right: 1px solid;
+}
+table.scorecard tr:nth-child(2) td:nth-child(even) {
+  border-bottom: 1px solid;
+}
+table.scorecard tr:nth-child(2) td:last-child {
+  border-bottom: 1px solid;
+}
 
 .ball {
-	display: block;
-	width: 100px;
-	height: 100px;
-	margin: 50px auto 0;
-	border-radius: 50%;
-    color:#fff;
-    cursor:pointer;
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 50px auto 0;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
 }
 
 .b2 {
-    background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);  
-  }
+  background: radial-gradient(
+    circle at 65% 15%,
+    white 1px,
+    aqua 3%,
+    darkblue 60%,
+    aqua 100%
+  );
+}
 
-  #header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4px 65px 3px 20px;
-    /* background: #457b9d; */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 1;
-    position: sticky;
-    top: 0;
-    left: 0;
-    border: 3.5px solid;
-    border-color: #1364E8; 
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#1364E8", endColorstr="#1364E8", GradientType=1);
-    width: 90%;
-    border-top: none;
-    border-bottom-right-radius: 9999px;
-    /* width: 100%; */
- }
- 
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 65px 3px 20px;
+  /* background: #457b9d; */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border: 3.5px solid;
+  border-color: #1364e8;
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#1364E8", endColorstr="#1364E8", GradientType=1);
+  width: 90%;
+  border-top: none;
+  border-bottom-right-radius: 9999px;
+  /* width: 100%; */
+}
 
-  .logo {
-    width: 200px;
-    border-radius: 5px;
-    border-bottom-right-radius: 27.5px;
- }
+.logo {
+  width: 200px;
+  border-radius: 5px;
+  border-bottom-right-radius: 27.5px;
+}
 
- #header a {
-    text-decoration: none;
-    color: #001d3d;
- }
- 
- #header a strong {
-    color: #1364E8;
- }
- 
- #navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
- }
- 
- #navbar li {
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
-    cursor: pointer;
- }
- 
- #navbar a {
-    color: #001d3d;
- }
- 
- #navbar li a {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    color: #001d3d;
-    transition: all 0.3s ease;
- }
- 
- #navbar li a span,
- #mobile a span {
-    position: absolute;
-    bottom: 15px;
-    left: 30px;
-    padding: 5px 5px 0 5px;
-    border-radius: 25%;
-    background-color: #088178;
-    color: #f2f2f2;
-    font-size: 16px;
-    font-weight: 800;
- }
- 
- #navbar li a:hover,
- #navbar li a.active,
- #mobile a.active {
-    color:#1364E8;
- }
- 
- #navbar li a.active::after,
- #navbar li a:hover::after,
- #mobile a.active:hover::after {
-    content: '';
-    width: 30%;
-    height: 2.5px;
-    border-radius: 0.5%;
-    background: #f2f2f2;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
- }
- 
- #navbar i {
-    font-size: 26px;
- }
+#header a {
+  text-decoration: none;
+  color: #001d3d;
+}
+
+#header a strong {
+  color: #1364e8;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+#navbar a {
+  color: #001d3d;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #001d3d;
+  transition: all 0.3s ease;
+}
+
+#navbar li a span,
+#mobile a span {
+  position: absolute;
+  bottom: 15px;
+  left: 30px;
+  padding: 5px 5px 0 5px;
+  border-radius: 25%;
+  background-color: #088178;
+  color: #f2f2f2;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+#navbar li a:hover,
+#navbar li a.active,
+#mobile a.active {
+  color: #1364e8;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after,
+#mobile a.active:hover::after {
+  content: "";
+  width: 30%;
+  height: 2.5px;
+  border-radius: 0.5%;
+  background: #f2f2f2;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+#navbar i {
+  font-size: 26px;
+}
+
+.diamond-shape {
+  background: #1364e8;
+  height: 60px;
+  text-align: center;
+  transform: rotate(45deg);
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.item-count {
+  color: #fff;
+  display: table-cell;
+  height: 60px;
+  transform: rotate(-45deg);
+  vertical-align: middle;
+  width: 60px;
+}
