@@ -44,10 +44,10 @@ app.get('/', function(req, res){
         score: ballingGame.GetScore(),
         balls: ballingGame.PlaySimulator()
     })
-});
+});    
 
 app.post('/bowl', function(req,res){
-
+    res.redirect('/');
 })
 
 //start the server

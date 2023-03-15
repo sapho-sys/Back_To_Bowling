@@ -3,6 +3,9 @@ module.exports = function BallingGame(){
     let counter = 0;
     let bowls;
     let points;
+    let playerAction = [];
+    let scorings = [];
+    let scoreData = [];
     
     function PlayGame(rolls){
        
@@ -43,15 +46,17 @@ module.exports = function BallingGame(){
      }
 
      function GetScore(){
-        return score;
+       
+        scoreData.push(score)
+        return scoreData;
      }
      function setBoard(){
-        let count = GetCounter();
+        let currentPoint = PlaySimulator();
         let pointers = GetScore();
-        bowls = count;
+        bowls = currentPoint;
         points = pointers ;
-        return {bowls, points};
-
+        playerAction.push({bowls, points})
+        return playerAction;
      }
 
      function getBoard(){
@@ -64,11 +69,13 @@ module.exports = function BallingGame(){
      }
 
      function PlaySimulator(){
-        const randomScore = ["/", "X", '9', '10', '1', '2', '3', '4', '5', '6', '7', '14', '13', '11', '8'];
+        const randomScore = ["/", "X", '9', '0', '1', '2', '3', '4', '5', '6', '7', '5', '8', '9', '8'];
         const random = Math.floor(Math.random() * randomScore.length);
         let scoredPoint = randomScore[random]
         PlayGame(scoredPoint);
-        return scoredPoint;
+       
+        scorings.push(scoredPoint)
+        return scorings;
      }
 
      return {
