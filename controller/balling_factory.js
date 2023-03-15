@@ -1,6 +1,6 @@
 module.exports = function BallingGame() {
   let score = 0;
-  let counter = 0;
+  let counter = 2;
   let scorings = [];
   let scoreData = [];
 
