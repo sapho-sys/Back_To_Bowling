@@ -221,4 +221,5 @@ table.scorecard tr:nth-child(2) td:last-child {
 
 .errors{
   color:orange;
+  font-size: 30px;
 }
