@@ -35,6 +35,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true   
 }));
+
 // initialise the flash middleware
 app.use(flash());
 

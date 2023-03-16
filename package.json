@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "node index.js",
+    "start": "node ./index.js",
     "build": "echo 'hello build'"
   },
   "keywords": [],
