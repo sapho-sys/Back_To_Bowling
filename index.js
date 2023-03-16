@@ -48,6 +48,10 @@ app.get('/', function(req, res){
 });    
 
 app.post('/bowl', function(req,res){
+    let counter = ballingGame.GetCounter();
+    if(counter > 22){
+        req.flash('warning', 'You have ran out of game!')
+    }
     res.redirect('/');
 })
 

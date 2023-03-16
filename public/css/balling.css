@@ -209,3 +209,16 @@ table.scorecard tr:nth-child(2) td:last-child {
   vertical-align: middle;
   width: 60px;
 }
+
+.dot {
+  height: 50%;
+  width: 50%;
+  background-color:	#15A3EF;
+  border-radius: 30%;
+  display: inline-block;
+  border-style: dotted dashed solid double;
+}
+
+.errors{
+  color:orange;
+}

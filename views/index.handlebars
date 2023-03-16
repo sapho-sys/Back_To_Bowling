@@ -61,23 +61,28 @@
         <tr>
           {{#if balls2}}
             {{#each score}}
-              <td colspan="6" id="marker0">{{this}}</td>
+              <td colspan="6" id="marker0"><span
+                  class="dot"
+                >{{this}}</span></td>
             {{/each}}
           {{/if}}
         </tr>
       </table>
     </div>
+
     <div id="buttons" class="buttons">
+      {{#if messages.warning}}
+        <div class="errors">
+          <h5 class="error">{{messages.warning}}</h5>
+        </div>
+      {{/if}}
       <form action="/bowl" method="POST">
         <button type="submit" onclick="pinHit(0)" class="ball b2"><strong>Bowl
             !!!</strong></button>
       </form>
 
     </div>
-    <h1 id="comments" class="notice"></h1>
-    <h1 id="gameover" class="notice"></h1>
-    <h1 id="yourscore" class="final-score"></h1>
-    <div id="playagain"></div>
+    <script src="/js/setimeout.js"></script>
 
   </body>
 </html>
