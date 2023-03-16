@@ -69,10 +69,7 @@ module.exports = function BallingGame() {
       }
       
     }
-   
     return score;
-   
-    
   }
 
 
@@ -107,12 +104,20 @@ module.exports = function BallingGame() {
     ];
     const random = Math.floor(Math.random() * randomScore.length);
     let scoredPoint = randomScore[random];
-    PlayGame(scoredPoint)
-    scorings.push(scoredPoint);
-    // if(GetCounter() >= 23){
-    //     return;
-    //   }
-    if(counter >=23){
+    
+    if(scoredPoint.startsWith('X')){
+      const result = scoredPoint.slice(0,1);
+      PlayGame(result)
+      scorings.push(result);
+    }
+    if(scoredPoint.endsWith('X')){
+      const result2 = scoredPoint.slice(-0, -1)
+      PlayGame(result2)
+      scorings.push(result2);
+    }
+      PlayGame(scoredPoint)
+      scorings.push(scoredPoint);
+    if(counter >24){
       return;
     }
     return scorings;

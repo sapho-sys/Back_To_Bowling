@@ -51,7 +51,7 @@ app.get('/', function(req, res){
 app.post('/bowl', function(req,res){
     let counter = ballingGame.GetCounter();
     if(!counter){
-        req.flash('warning', 'You have ran out of game!')
+        req.flash('warning', 'Sorry, You have ran out of balls!')
     }
     res.redirect('/');
 })
