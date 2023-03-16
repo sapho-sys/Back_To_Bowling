@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "build": "echo 'hello build'"
   },
   "keywords": [],
   "author": "",
