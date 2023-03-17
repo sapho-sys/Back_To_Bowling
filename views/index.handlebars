@@ -29,8 +29,10 @@
     </section><!-- .shape-section -->
 
     <h1 class="title">Bowling Score Card</h1>
+    <div style="overflow-x:auto;">
     <div id="scorecard">
-      <table
+      
+         <table
         id="scorecardTable"
         class="scorecard"
         cellpadding="1"
@@ -68,6 +70,9 @@
           {{/if}}
         </tr>
       </table>
+
+      </div>
+     
     </div>
 
     <div id="buttons" class="buttons">
@@ -80,6 +85,8 @@
         <button type="submit" onclick="pinHit(0)" class="ball b2"><strong>Bowl
             !!!</strong></button>
       </form>
+      <br><br>
+      <div class="trapezoid"><strong>Total Score:</strong><br>{{allScore}}</div>
 
     </div>
     <script src="/js/setimeout.js"></script>

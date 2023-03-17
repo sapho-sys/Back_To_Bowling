@@ -44,7 +44,8 @@ app.get('/', function(req, res){
         counter: ballingGame.GetCounter(),
         score: ballingGame.GetScore(),
         balls: ballingGame.PlaySimulator(),
-        balls2:ballingGame.PlaySimulator()
+        balls2:ballingGame.PlaySimulator(),
+        allScore: ballingGame.OveralScore()
     })
 });    
 

@@ -77,6 +77,12 @@ module.exports = function BallingGame() {
     scoreData.push(score);
     return scoreData;
   }
+  function OveralScore(){
+    if(counter >=28){
+      return;
+    }
+    return score;
+  }
   function GetCounter() {
     if(counter >=23){
       return;
@@ -104,6 +110,8 @@ module.exports = function BallingGame() {
     ];
     const random = Math.floor(Math.random() * randomScore.length);
     let scoredPoint = randomScore[random];
+    PlayGame(scoredPoint)
+    scorings.push(scoredPoint);
     
     if(scoredPoint.startsWith('X')){
       const result = scoredPoint.slice(0,1);
@@ -111,12 +119,11 @@ module.exports = function BallingGame() {
       scorings.push(result);
     }
     if(scoredPoint.endsWith('X')){
-      const result2 = scoredPoint.slice(-0, -1)
+      const result2 = scoredPoint.slice(1)
       PlayGame(result2)
       scorings.push(result2);
     }
-      PlayGame(scoredPoint)
-      scorings.push(scoredPoint);
+     
     if(counter >24){
       return;
     }
@@ -129,5 +136,6 @@ module.exports = function BallingGame() {
     GetScore,
     GetCounter,
     PlaySimulator,
+    OveralScore
   };
 };
