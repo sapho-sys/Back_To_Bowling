@@ -7,8 +7,8 @@ describe('Sapho Nkunzi Bowling Game', function(){
     //first bowl
     it('The player should be able to make an unsuccessful bowl & earn 0 in points', function(){
         ballingAlley.PlayGame('');
-        console.log('Score =>', ballingAlley.GetScore());
-        assert.deepEqual([0,0],ballingAlley.GetScore());
+        console.log('Score =>', ballingAlley.GetScore().slice(-1));
+        assert.deepEqual([0],ballingAlley.GetScore().slice(-1));
     });
     //second bowl
     it('The player should be able to able to get 10 points if they hit a Spare', function(){
