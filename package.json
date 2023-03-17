@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [],
@@ -23,7 +23,8 @@
     "express-handlebars": "^7.0.1",
     "express-session": "^1.17.3",
     "flash": "^1.1.0",
-    "session": "^0.1.0"
+    "session": "^0.1.0",
+    "use-history": "^1.4.1"
   },
   "devDependencies": {
     "mocha": "^10.2.0"

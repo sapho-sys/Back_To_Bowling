@@ -3,6 +3,7 @@ module.exports = function BallingGame() {
   let counter = 2;
   let scorings = [];
   let scoreData = [];
+  let result;
 
   function PlayGame(rolls) {
     let regex = "/s/g";
@@ -67,24 +68,22 @@ module.exports = function BallingGame() {
             : null;
         }
       }
-      
     }
     return score;
   }
-
 
   function GetScore() {
     scoreData.push(score);
     return scoreData;
   }
-  function OveralScore(){
-    if(counter >=28){
+  function OveralScore() {
+    if (counter >= 28) {
       return;
     }
     return score;
   }
   function GetCounter() {
-    if(counter >=23){
+    if (counter >= 23) {
       return;
     }
     return counter;
@@ -110,25 +109,28 @@ module.exports = function BallingGame() {
     ];
     const random = Math.floor(Math.random() * randomScore.length);
     let scoredPoint = randomScore[random];
-    PlayGame(scoredPoint)
-    scorings.push(scoredPoint);
-    
-    if(scoredPoint.startsWith('X')){
-      const result = scoredPoint.slice(0,1);
-      PlayGame(result)
+
+    if (scoredPoint.startsWith("X")) {
+      result = scoredPoint.charAt(0);
       scorings.push(result);
+      PlayGame(result);
+      scorings.splice(-2,1);
+      
     }
-    if(scoredPoint.endsWith('X')){
-      const result2 = scoredPoint.slice(1)
-      PlayGame(result2)
-      scorings.push(result2);
+    if (scoredPoint.endsWith("X")) {
+      result = scoredPoint.charAt(-2);
+      PlayGame(result);
+      scorings.push(result);
+      scorings.splice(-2, 1);
     }
-     
-    if(counter >24){
+    PlayGame(scoredPoint);
+    scorings.push(scoredPoint);
+    console.log("DATA=>", scorings);
+
+    if (counter > 24) {
       return;
     }
     return scorings;
-    
   }
 
   return {
@@ -136,6 +138,6 @@ module.exports = function BallingGame() {
     GetScore,
     GetCounter,
     PlaySimulator,
-    OveralScore
+    OveralScore,
   };
 };

@@ -39,6 +39,7 @@ app.use(session({
 // initialise the flash middleware
 app.use(flash());
 
+
 app.get('/', function(req, res){
     res.render('index', {
         counter: ballingGame.GetCounter(),
@@ -54,7 +55,7 @@ app.post('/bowl', function(req,res){
     if(!counter){
         req.flash('warning', 'Sorry, You have ran out of balls!')
     }
-    res.redirect('/');
+    res.redirect('back');
 })
 
 //start the server
