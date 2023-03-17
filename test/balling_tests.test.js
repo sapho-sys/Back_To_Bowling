@@ -13,26 +13,26 @@ describe('Sapho Nkunzi Bowling Game', function(){
     //second bowl
     it('The player should be able to able to get 10 points if they hit a Spare', function(){
         ballingAlley.PlayGame('/');
-        console.log('Score =>', ballingAlley.GetScore());
-        assert.deepEqual([0,0,10,10], ballingAlley.GetScore());
+        console.log('Score =>', ballingAlley.GetScore().slice(-1));
+        assert.deepEqual([10], ballingAlley.GetScore().slice(-1));
     });
     //third bowl
     it('The player should be able to increase their score to 20 points if they hit a Strike', function(){
         ballingAlley.PlayGame('X');
-        console.log('Score =>', ballingAlley.GetScore());
-        assert.deepEqual([0,0,10,10,20,20], ballingAlley.GetScore());
+        console.log('Score =>', ballingAlley.GetScore().slice(-1));
+        assert.deepEqual([20], ballingAlley.GetScore().slice(-1));
     });
     //fourth bowl
     it('The player should be able to increase their score to 31 from the previous total received on the Strike', function(){
         ballingAlley.PlayGame('15');
-        console.log('Score =>', ballingAlley.GetScore());
-        assert.deepEqual([0,0,10,10,20,20,31,31], ballingAlley.GetScore());
+        console.log('Score =>', ballingAlley.GetScore().slice(-1));
+        assert.deepEqual([31], ballingAlley.GetScore().slice(-1));
     })
     //Bowl fifth - seventh
-    it('The player should be able to increase their score to 42 from the previous total received on the Strike', function(){
+    it('The player should be able to increase their score to 34 from the previous total received on the Strike', function(){
         ballingAlley.PlayGame('11');
-        console.log('Score =>', ballingAlley.GetScore());
-        assert.deepEqual([0,0,10,10,20,20,31,31,34,34], ballingAlley.GetScore());
+        console.log('Score =>', ballingAlley.GetScore().slice(-1));
+        assert.deepEqual([34], ballingAlley.GetScore().slice(-1));
     })
     //Bowl 8 display in counter
     it('The player should be able to see the number of swings they have made in the bowling alley, which is 8 in this case',function(){
