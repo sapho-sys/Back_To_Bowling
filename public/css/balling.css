@@ -1,6 +1,7 @@
 
 .title {
   text-align: center;
+  color:#f2f2f2;
 }
 .buttons {
   text-align: center;
@@ -20,7 +21,7 @@
 }
 table.scorecard {
   margin: 0 auto;
-  width: 100%;
+  width: 60%;
   font-size: 12px;
   border: 1px solid;
   text-align: center;
@@ -66,11 +67,11 @@ table.scorecard tr:nth-child(2) td:last-child {
 
 .ball {
   display: block;
-  width: 100px;
-  height: 100px;
+  /* width: 100px; */
+  /* height: 100px; */
   margin: 50px auto 0;
-  border-radius: 50%;
-  color: #fff;
+  border-radius: 20%;
+  /* color: #fff; */
   cursor: pointer;
 }
 
@@ -407,4 +408,83 @@ table.scorecard tr:nth-child(2) td:last-child {
   }
 }
 
+.containers{
+  background: radial-gradient(
+    circle at 65% 15%,
+    white 1px,
+    aqua 3%,
+    darkblue 60%,
+    aqua 100%
+  );
 
+  width:60%;
+  margin-left: auto;
+  margin-right: auto;
+  height:550px;
+  border-radius: 20pt;
+
+}
+
+.pins-wrapper{
+  margin: auto;
+  margin-top: 120px;
+  padding: 10px;
+  height: fit-content;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 20px;
+}
+
+
+.pin{
+  margin: 5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50% 50% 40% 40%;
+  margin-top: -80px;
+  border: solid black;
+  background: radial-gradient(white 0 50%, gray 90%);
+  z-index:1;
+}
+
+.pin::before{
+  display: block;
+  position: relative;
+  top: -35px;
+  left: 4px;
+  content: '';
+  height: 20px;
+  width: 20px;
+  border: solid black;
+  border-radius: 50%;
+  background: radial-gradient(white 0 50%, gray 90%);
+}
+
+.pin::after{
+  display: block;
+  position: relative;
+  content: '';
+  top: -35px;
+  left: 8px;
+  width: 12px;
+  height: 14px;
+  background: linear-gradient(90deg, gray 2%, transparent 30% 70%, gray 96%), linear-gradient(white 0 30%, red 30% 40%, white 40% 60%, red 60% 70%, white 70%);
+  border: solid black;
+  border-top: none;
+  border-bottom: none;
+}
+
+.lane{
+  position: relative;
+  top: -250px;
+  height: 350px;
+  width: 250px;
+  background-color: blanchedalmond;
+  margin: auto;
+  transform: perspective(100px) rotateX(10deg);
+  /* z-index: -1; */
+}
