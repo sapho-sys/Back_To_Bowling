@@ -1,5 +1,5 @@
 module.exports = function BallingGame() {
-  let score = 0;
+  let score = 14;
   let counter = 2;
   let scorings = [];
   let scoreData = [];
@@ -80,7 +80,7 @@ module.exports = function BallingGame() {
     if (counter >= 28) {
       return;
     }
-    return score;
+    return [score];
   }
   function GetCounter() {
     if (counter >= 23) {

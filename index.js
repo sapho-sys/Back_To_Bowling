@@ -58,7 +58,7 @@ app.post('/bowl', function(req,res){
     setTimeout(()=>{
         res.redirect('back');
 
-    },1000)
+    },2500)
    
 })
 
