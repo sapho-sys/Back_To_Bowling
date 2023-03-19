@@ -1,4 +1,6 @@
-
+body {
+  background-color: #000;
+}
 .title {
   text-align: center;
   color:#f2f2f2;
@@ -530,3 +532,6 @@ table.scorecard tr:nth-child(2) td:last-child {
       transform: rotate(90deg);
   }
 }
+
+/* .bowl{
+  /* margin-top: 170px;

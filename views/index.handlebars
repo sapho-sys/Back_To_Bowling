@@ -16,9 +16,7 @@
       createjs.Ease.getPowInOut(2)) .to({alpha: 0, y: 20}, 500,
       createjs.Ease.getPowInOut(2)) .to({alpha: 1, y: 20}, 100) .to({alpha: 0,
       y: 20}, 500, createjs.Ease.getPowInOut(2)) .to({y: 100}, 800,
-      createjs.Ease.getPowInOut(4)); myFunction(); } }
-      
-       function myFunction() {
+      createjs.Ease.getPowInOut(4)); myFunction(); } } function myFunction() {
       const list = document.querySelectorAll(".pin"); setTimeout(()=>{ for (let
       i = 0; i < list.length; i++){ list[i].classList.add("fall"); } },1500) }
 
@@ -112,27 +110,26 @@
           <div class="row">
             <div class="pin"></div>
           </div>
-           
+
         </div>
+
         <div class="lane">
-          
-            <canvas
+
+          <canvas
             class="ball"
             type="submit"
             id="demoCanvas"
             width="200"
             height="350"
-          ></canvas>
+          >
+          </canvas>
+          <form action="/bowl" method="POST" id="form_entry">
 
-           <form action="/bowl" method="POST" id="form_entry">
-          
-            <button type="submit"><strong>Bowl !!!</strong></button>
+            <button class="bowl" type="submit"><strong>Bowl !!!</strong></button>
+
           </form>
-         
-         
 
         </div>
-       
 
       </div>
       {{!-- <table
