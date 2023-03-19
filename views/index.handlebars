@@ -7,9 +7,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/balling.css" />
     <script>
-      
-
-
 
       function init() { var stage = new createjs.Stage("demoCanvas"); var circle
       = new createjs.Shape(); circle.graphics.beginFill("red").drawCircle(0, 0,
@@ -19,136 +16,146 @@
       createjs.Ease.getPowInOut(2)) .to({alpha: 0, y: 20}, 500,
       createjs.Ease.getPowInOut(2)) .to({alpha: 1, y: 20}, 100) .to({alpha: 0,
       y: 20}, 500, createjs.Ease.getPowInOut(2)) .to({y: 100}, 800,
-      createjs.Ease.getPowInOut(4)); } }
-
-
+      createjs.Ease.getPowInOut(4)); myFunction(); } }
       
+       function myFunction() {
+      const list = document.querySelectorAll(".pin"); setTimeout(()=>{ for (let
+      i = 0; i < list.length; i++){ list[i].classList.add("fall"); } },1500) }
+
     </script>
   </head>
   <body onclick="init();">
-     
 
-  
+    <section class="shape-section">
+      <div class="container diamond-shape">
+        <div class="item-count">{{counter}}</div>
+      </div>
+    </section>
+    <div id="scorecard">
 
-      <section class="shape-section">
-        <div class="container diamond-shape">
-          <div class="item-count">{{counter}}</div>
+      <table
+        id="scorecardTable"
+        class="scorecard"
+        cellpadding="1"
+        cellspacing="0"
+      >
+
+        <tr>
+          <th colspan="6">1</th>
+          <th colspan="6">2</th>
+          <th colspan="6">3</th>
+          <th colspan="6">4</th>
+          <th colspan="6">5</th>
+          <th colspan="6">6</th>
+          <th colspan="6">7</th>
+          <th colspan="6">8</th>
+          <th colspan="6">9</th>
+          <th colspan="6">10</th>
+        </tr>
+        <tr>
+          {{#each balls}}
+            {{#each balls2}}
+              <td colspan="3">{{this}}</td>{{/each}}<td
+              id="frame1"
+              colspan="3"
+            >{{this}}</td>
+          {{/each}}
+        </tr>
+        <tr>
+          {{#if balls2}}
+            {{#each score}}
+              <td colspan="6" id="marker0"><span
+                  class="dot"
+                >{{this}}</span></td>
+            {{/each}}
+          {{/if}}
+
+        </tr>
+      </table>
+
+    </div>
+    <div id="buttons" class="buttons">
+      {{#if messages.warning}}
+        <div class="errors">
+          <h5 class="error">{{messages.warning}}</h5>
         </div>
-      </section>
-      <div id="scorecard">
+      {{/if}}
 
-          <table
-            id="scorecardTable"
-            class="scorecard"
-            cellpadding="1"
-            cellspacing="0"
-          >
-
-            <tr>
-              <th colspan="6">1</th>
-              <th colspan="6">2</th>
-              <th colspan="6">3</th>
-              <th colspan="6">4</th>
-              <th colspan="6">5</th>
-              <th colspan="6">6</th>
-              <th colspan="6">7</th>
-              <th colspan="6">8</th>
-              <th colspan="6">9</th>
-              <th colspan="6">10</th>
-            </tr>
-            <tr>
-              {{#each balls}}
-                {{#each balls2}}
-                  <td colspan="3">{{this}}</td>{{/each}}<td
-                  id="frame1"
-                  colspan="3"
-                >{{this}}</td>
-              {{/each}}
-            </tr>
-            <tr>
-              {{#if balls2}}
-                {{#each score}}
-                  <td colspan="6" id="marker0"><span
-                      class="dot"
-                    >{{this}}</span></td>
-                {{/each}}
-              {{/if}}
-            </tr>
-          </table>
-
-        </div>
-        <div class="containers">
-    
+    </div>
+    <div class="containers">
 
       <div style="overflow-x:auto;">
-        
 
         <div class="pins-wrapper">
-        <div class="row">
+          <div class="row">
             <div class="pin"></div>
             <div class="pin"></div>
             <div class="pin"></div>
             <div class="pin"></div>
             <div class="pin"></div>
-        </div>
-        <div class="row">
-            <div class="pin"></div>
-            <div class="pin"></div>
-            <div class="pin"></div>
-            <div class="pin"></div>
-        </div>
-        <div class="row">
-            <div class="pin"></div>
-            <div class="pin"></div>
-            <div class="pin"></div>
-        </div>
-        <div class="row">
-            <div class="pin"></div>
-            <div class="pin"></div>
-        </div>
-        <div class="row">
-            <div class="pin"></div>
-        </div>
-    </div>
-   <div class="lane">
-
-      <canvas
-        class="ball"
-        type="submit"
-        id="demoCanvas"
-        width="200"
-        height="350"
-      ></canvas>
-
-       
-       <form action="/bowl" method="POST" id="form_entry">
-      <button  type="submit" ><strong>Bowl !!!</strong></button>
-
-    </form>
-    </div>
-    
-       
-
-      </div>
-     
-
-      <div id="buttons" class="buttons">
-        {{#if messages.warning}}
-          <div class="errors">
-            <h5 class="error">{{messages.warning}}</h5>
           </div>
-        {{/if}}
+          <div class="row">
+            <div class="pin"></div>
+            <div class="pin"></div>
+            <div class="pin"></div>
+            <div class="pin"></div>
+          </div>
+          <div class="row">
+            <div class="pin"></div>
+            <div class="pin"></div>
+            <div class="pin"></div>
+          </div>
+          <div class="row">
+            <div class="pin"></div>
+            <div class="pin"></div>
+          </div>
+          <div class="row">
+            <div class="pin"></div>
+          </div>
+           
+        </div>
+        <div class="lane">
+          
+            <canvas
+            class="ball"
+            type="submit"
+            id="demoCanvas"
+            width="200"
+            height="350"
+          ></canvas>
+
+           <form action="/bowl" method="POST" id="form_entry">
+          
+            <button type="submit"><strong>Bowl !!!</strong></button>
+          </form>
+         
+         
+
+        </div>
+       
 
       </div>
-        
-      
+      {{!-- <table
+        id="scorecardTable"
+        class="scorecard2"
+        cellpadding="1"
+        cellspacing="0"
+      >
+        <tr>
 
-      {{!-- <div class="trapezoid"><strong>Total Score:</strong><br>{{allScore}}</div> --}}
+          <th colspan="6">SCORED POINTS</th>
+        </tr>
+        <tr>
+
+          <td colspan="6" id="marker0"><span
+              class="dot"
+            >{{allScore}}</span></td>
+        </tr>
+
+      </table> --}}
 
     </div>
 
-     
-   
     <script src="/js/setimeout.js"></script>
     <script src="/public/js/rollball.js"></script>
 
