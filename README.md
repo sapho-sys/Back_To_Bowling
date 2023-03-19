@@ -28,9 +28,6 @@ Then clone your own version of this repo into your local `project` folder.
 
 Use the supplied factory function in `balling_factory.js` in your ExpressJS app.
 
-Create a PostgreSQL database called `spaza_suggest` use the script in `001.db.sql` or do your own database setup.
-
-
 
 Run these commands to install all dependencies & to run the tests
 
@@ -41,7 +38,7 @@ npm test
 
 All the tests should pass on Github Action(NodeJS CI).
 
-Don't start creating the web app if your tests are not passing. Get assistance & clarification if needed from the `mentors@projectcodex.co` before potentially blindly proceeding.
+Don't start creating the web app if your tests are not passing.
 
 Create an `index.js` file for your ExpressJS web app.
 
