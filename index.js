@@ -39,27 +39,40 @@ app.use(session({
 // initialise the flash middleware
 app.use(flash());
 
-
+var session_data;
 app.get('/', function(req, res){
     res.render('index', {
         counter: ballingGame.GetCounter(),
-        score: ballingGame.GetScore(),
-        balls: ballingGame.PlaySimulator(),
-        balls2:ballingGame.PlaySimulator(),
+        balls:session_data,
         allScore: ballingGame.OveralScore()
     })
 });    
 
 app.post('/bowl', function(req,res){
     let counter = ballingGame.GetCounter();
+    let playerSession = ballingGame.PlaySimulator()
+    session_data = req.session
+    session_data = playerSession
+
+    console.log("Session", session_data);
     if(!counter){
         req.flash('warning', 'Sorry, You have ran out of balls!')
     }
     setTimeout(()=>{
-        res.redirect('back');
+        res.redirect(`back`);
 
     },2500)
    
+})
+
+app.get('/index', function(req,res){
+    if(!req.session_data){
+        res.redirect('/')
+    }
+    res.render('index',{
+         balls:session_data,
+
+    })
 })
 
 //start the server
