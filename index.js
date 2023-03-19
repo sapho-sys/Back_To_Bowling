@@ -55,7 +55,11 @@ app.post('/bowl', function(req,res){
     if(!counter){
         req.flash('warning', 'Sorry, You have ran out of balls!')
     }
-    res.redirect('back');
+    setTimeout(()=>{
+        res.redirect('back');
+
+    },1000)
+   
 })
 
 //start the server
