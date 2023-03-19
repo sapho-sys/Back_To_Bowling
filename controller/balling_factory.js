@@ -1,6 +1,6 @@
 module.exports = function BallingGame() {
   let score = 1;
-  let counter = 2;
+  let counter = 0;
   let scorings = [];
   let scoreData = [];
   let result;
@@ -82,14 +82,14 @@ module.exports = function BallingGame() {
     }
     return [score];
   }
-  function GetCounter() {
+  function roll() {
     if (counter >= 23) {
       return;
     }
     return counter;
   }
 
-  function PlaySimulator() {
+  function SimulatePlayer() {
     const randomScore = [
       "/",
       "X",
@@ -136,8 +136,8 @@ module.exports = function BallingGame() {
   return {
     PlayGame,
     GetScore,
-    GetCounter,
-    PlaySimulator,
+    roll,
+    SimulatePlayer,
     OveralScore,
   };
 };

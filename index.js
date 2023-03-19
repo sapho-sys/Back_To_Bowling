@@ -42,15 +42,15 @@ app.use(flash());
 var session_data;
 app.get('/', function(req, res){
     res.render('index', {
-        counter: ballingGame.GetCounter(),
+        counter: ballingGame.roll(),
         balls:session_data,
         allScore: ballingGame.OveralScore()
     })
 });    
 
 app.post('/bowl', function(req,res){
-    let counter = ballingGame.GetCounter();
-    let playerSession = ballingGame.PlaySimulator()
+    let counter = ballingGame.roll();
+    let playerSession = ballingGame.SimulatePlayer()
     session_data = req.session
     session_data = playerSession
 
@@ -76,7 +76,7 @@ app.get('/index', function(req,res){
 })
 
 //start the server
-const PORT = process.env.PORT || 3012;
+const PORT = process.env.PORT || 3011;
 
 app.listen(PORT, function () {
     console.log("App running at http://localhost:" + PORT)
