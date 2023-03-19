@@ -21,6 +21,11 @@
       i = 0; i < list.length; i++){ list[i].classList.add("fall"); } },1500) }
 
     </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
   </head>
   <body onclick="init();">
 
@@ -59,17 +64,15 @@
             >{{this}}</td>
           {{/each}}
         </tr>
-        <tr>
-          {{#if balls2}}
-            {{#each score}}
-              <td colspan="6" id="marker0"><span
-                  class="dot"
-                >{{this}}</span></td>
-            {{/each}}
-          {{/if}}
 
-        </tr>
       </table>
+
+       
+         {{#each allScore}}
+        <td colspan="6" id="marker0"><span class="dot"><h4 class=""><strong>Score:</strong></h4>{{this}}</span></td>
+        {{/each}}
+
+   
 
     </div>
     <div id="buttons" class="buttons">
@@ -132,7 +135,6 @@
         </div>
 
       </div>
-  
 
     </div>
 

@@ -236,12 +236,16 @@ table.scorecard tr:nth-child(2) td:last-child {
 }
 
 .dot {
-  height: 50%;
-  width: 50%;
+  height: 100px;
+  width: 55px;
+  float: right;
   background-color:	#15A3EF;
-  border-radius: 30%;
-  display: inline-block;
+  /* border-radius: 50%; */
+  /* display: inline-block; */
   border-style: dotted dashed solid double;
+  font-family: 'Orbitron', sans-serif;
+  /* margin-left: 50%; */
+  text-align: center;
 }
 
 .errors{
