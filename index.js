@@ -66,9 +66,9 @@ app.post('/bowl', function(req,res){
 })
 
 app.get('/index', function(req,res){
-    if(!req.session_data){
-        res.redirect('/')
-    }
+    // if(!req.session_data){
+    //     res.redirect('/')
+    // }
     res.render('index',{
          balls:session_data,
 
