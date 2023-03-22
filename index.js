@@ -41,10 +41,7 @@ app.use(flash());
 
 var session_data;
 app.get('/', function(req, res){
-    res.render('index', {
-        counter: ballingGame.roll(),
-        allScore: ballingGame.OveralScore()
-    })
+    res.render('index')
 });    
 
 app.post('/bowl', function(req,res){
@@ -66,7 +63,9 @@ app.post('/bowl', function(req,res){
 
 app.get('/index', function(req,res){
     res.render('index',{
-        balls:session_data
+        balls:session_data,
+        counter: ballingGame.roll(),
+        allScore: ballingGame.OveralScore()
 
     })
 })
