@@ -43,7 +43,6 @@ var session_data;
 app.get('/', function(req, res){
     res.render('index', {
         counter: ballingGame.roll(),
-        balls:session_data,
         allScore: ballingGame.OveralScore()
     })
 });    
@@ -59,10 +58,17 @@ app.post('/bowl', function(req,res){
         req.flash('warning', 'Sorry, You have ran out of balls!')
     }
     setTimeout(()=>{
-        res.redirect(`back`);
+        res.redirect(`index`);
 
     },2500)
    
+});
+
+app.get('/index', function(req,res){
+    res.render('index',{
+        balls:session_data
+
+    })
 })
 
 
