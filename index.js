@@ -43,7 +43,7 @@ var session_data;
 app.get('/', function(req, res){
     res.render('index', {
         counter: ballingGame.roll(),
-        balls:session_data,
+        // balls:session_data,
         allScore: ballingGame.OveralScore()
     })
 });    
