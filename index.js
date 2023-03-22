@@ -55,7 +55,7 @@ app.post('/bowl', function(req,res){
     session_data = playerSession
 
     console.log("Session", session_data);
-    if(!counter){
+    if(counter > 24){
         req.flash('warning', 'Sorry, You have ran out of balls!')
     }
     setTimeout(()=>{
