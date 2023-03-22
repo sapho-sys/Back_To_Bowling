@@ -43,7 +43,7 @@ var session_data;
 app.get('/', function(req, res){
     res.render('index', {
         counter: ballingGame.roll(),
-        // balls:session_data,
+        balls:session_data,
         allScore: ballingGame.OveralScore()
     })
 });    
@@ -65,15 +65,7 @@ app.post('/bowl', function(req,res){
    
 })
 
-app.get('/index', function(req,res){
-    // if(!req.session_data){
-    //     res.redirect('/')
-    // }
-    res.render('index',{
-         balls:session_data,
 
-    })
-})
 
 //start the server
 const PORT = process.env.PORT || 3011;
