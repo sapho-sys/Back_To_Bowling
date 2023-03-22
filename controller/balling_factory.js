@@ -77,13 +77,13 @@ module.exports = function BallingGame() {
     return scoreData;
   }
   function OveralScore() {
-    if (counter >= 28) {
+    if (counter >= 24) {
       return;
     }
     return [score];
   }
   function roll() {
-    if (counter >= 23) {
+    if (counter >= 24) {
       return;
     }
     return counter;
@@ -125,9 +125,9 @@ module.exports = function BallingGame() {
     }
     PlayGame(scoredPoint);
     scorings.push(scoredPoint);
-    console.log("DATA=>", scorings);
+    // console.log("DATA=>", scorings);
 
-    if (counter > 24) {
+    if (counter >=24) {
       return;
     }
     return scorings;
