@@ -57,15 +57,11 @@ app.post('/bowl', function(req,res){
     if(counter >=24){
         req.flash('warning', 'Sorry, You have ran out of balls!')
     }
-    setTimeout(()=>{
+   
         res.redirect(`back`);
-    },2500)
+  
    
 });
-
-
-
-
 
 //start the server
 const PORT = process.env.PORT || 3011;
