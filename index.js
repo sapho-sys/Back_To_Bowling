@@ -39,7 +39,7 @@ app.use(session({
 // initialise the flash middleware
 app.use(flash());
 
-var session_data;
+
 app.get('/', function(req, res){
     res.render('index',{
         balls:ballingGame.SimulatePlayer(),
@@ -48,20 +48,14 @@ app.get('/', function(req, res){
     })
 });    
 
-app.post('/bowl', function(req,res, next){
+app.post('/bowl', function(req,res){
     let counter = ballingGame.roll();
-    let playerSession = ballingGame.SimulatePlayer()
-    session_data = req.session
-    session_data = playerSession
-
     if(counter >=24){
         req.flash('warning', 'Sorry, You have ran out of balls!')
     } 
       setTimeout(()=>{
         res.redirect(`back`);
-      },2500)
-        
-      next();
+      },1700)
 });
 
 //start the server
