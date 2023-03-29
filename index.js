@@ -41,10 +41,26 @@ app.use(flash());
 
 
 app.get('/', function(req, res){
+    let score = ballingGame.SimulatePlayer()
+    let data = score.toString()  
+    let TotalScore = [];
+    const Alter = ['X','X','/','/'];
+    Alter.forEach(item =>{
+        data = data.replace(item, 10);
+    });
+    let entry = data.split(',')
+    const arrOfNum = entry.map(int => {
+        return parseInt(int, 10);
+      });
+      const newData = arrOfNum.filter(function(value){
+        return !Number.isNaN(value);
+      });
+    const sum = newData.reduce((partialSum,a)=>partialSum + a); 
+    TotalScore.push(sum)
     res.render('index',{
         balls:ballingGame.SimulatePlayer(),
         counter: ballingGame.roll(),
-        allScore: ballingGame.OveralScore()
+        allScore: TotalScore
     })
 });    
 
