@@ -35,7 +35,7 @@ npm install
 npm test
 ```
 
-All the tests should pass on Github Action(NodeJS CI).
+All the tests should pass on Github Action(NodeJS CI) and Locally on your Machine.
 
 Don't start creating the web app if your tests are not passing.
 
@@ -43,7 +43,7 @@ Create an `index.js` file for your ExpressJS web app.
 
 ## Factory function methods to use
 
-Use the supplied factory function in the `balling_factory.js` to build the screens above. Note that it is an es6 module.
+Use the supplied factory function in the `balling_factory.js` to get the show on the road. Note that it is an es6 module.
 
 
 ### Back to Bowling methods
